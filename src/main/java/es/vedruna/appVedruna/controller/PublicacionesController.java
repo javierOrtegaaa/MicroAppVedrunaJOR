@@ -21,9 +21,9 @@ public class PublicacionesController {
         return publicacionServiceImpl.createPublicacion(publicacion);
     }
     
-    @PutMapping("/put/{id}/{like}")
-    public Publicacion updatePublicacion(@PathVariable String id, @PathVariable int like){
-        return publicacionServiceImpl.updatePublicacion(id, like);
+    @PutMapping("/put/{id}/{id_user}")
+    public Publicacion updateLike(@PathVariable String id, @PathVariable String id_user){
+        return publicacionServiceImpl.updateLike(id, id_user);
     }
     // Obtener todos los usuarios
     @GetMapping()

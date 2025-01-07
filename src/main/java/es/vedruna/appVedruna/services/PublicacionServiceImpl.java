@@ -24,12 +24,20 @@ public class PublicacionServiceImpl implements PublicacionService{
     }
 
     @Override
-    public Publicacion updatePublicacion(String id, int like) {
-        Optional<Publicacion> publicacionOptional = puplicacionesRepository.findById(id);
+    public Publicacion updateLike(String id_publicacion, String id_user) {
+        Optional<Publicacion> publicacionOptional = puplicacionesRepository.findById(id_publicacion);
         
         if(publicacionOptional.isPresent()){
             Publicacion publicacion = publicacionOptional.get();
-            publicacion.setLikes(like);
+            // Añadir el id_user a la lista de likes si no está ya presente
+            List<String> likes = publicacion.getLike();
+            if (!likes.contains(id_user)) { // Evitar duplicados
+                likes.add(id_user); // Agregar el id_user a la lista
+                publicacion.setLike(likes); // Actualizar la lista de likes en la publicación
+            }else {
+                likes.remove(id_user); // Agregar el id_user a la lista
+                publicacion.setLike(likes); // Actualizar la lista de likes en la publicación   
+            }
             return puplicacionesRepository.save(publicacion);
         }else {
             throw new RuntimeException("Publicacion no encontrada");

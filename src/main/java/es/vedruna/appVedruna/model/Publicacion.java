@@ -8,6 +8,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.time.LocalDateTime;
+import java.util.LinkedList;
+import java.util.List;
 
 @Document(collection = "publicaciones")
 @Data // Lombok genera los getters, setters, toString, etc.
@@ -18,6 +20,6 @@ public class Publicacion {
     private String id;
     private String user_id;
     private String image_url;
-    private int likes;
+    private List <String> like = new LinkedList<>();;
     private LocalDateTime createdAt = LocalDateTime.now();
 }
