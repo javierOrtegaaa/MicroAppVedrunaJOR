@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: micro01
+  data:
+    mongodb:
+      uri: mongodb://localhost:27018/proyecto01
+      
