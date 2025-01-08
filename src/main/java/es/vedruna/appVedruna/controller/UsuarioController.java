@@ -3,6 +3,7 @@ package es.vedruna.appVedruna.controller;
 import es.vedruna.appVedruna.model.Usuario;
 import es.vedruna.appVedruna.services.UsuarioServiceImpl;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

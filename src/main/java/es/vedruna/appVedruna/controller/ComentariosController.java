@@ -2,19 +2,26 @@ package es.vedruna.appVedruna.controller;
 
 import es.vedruna.appVedruna.model.Comentario;
 import es.vedruna.appVedruna.services.ComentarioServiceImpl;
+import es.vedruna.appVedruna.services.PublicacionServiceImpl;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/proyecto01/comentarios")
 @AllArgsConstructor
 public class ComentariosController {
-    private ComentarioServiceImpl comentarioServiceImpl;
+    
+    private final ComentarioServiceImpl comentarioServiceImpl;
 
-    @PostMapping()
+    @GetMapping("/{id_publicacion}")
+    public List<Comentario> getComentarioById_publicacion(@PathVariable String id_publicacion){
+        return comentarioServiceImpl.getAllComentarios(id_publicacion);
+    }
+    
+    @PostMapping("/put")
     public Comentario createComentario(@RequestBody Comentario comentario) {
         return comentarioServiceImpl.crearComentario(comentario);
     }

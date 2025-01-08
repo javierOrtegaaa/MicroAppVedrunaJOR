@@ -1,8 +1,10 @@
 package es.vedruna.appVedruna.services;
 
+import es.vedruna.appVedruna.model.Comentario;
 import es.vedruna.appVedruna.model.Publicacion;
 import es.vedruna.appVedruna.repository.PuplicacionesRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -43,5 +45,12 @@ public class PublicacionServiceImpl implements PublicacionService{
             throw new RuntimeException("Publicacion no encontrada");
         }
     }
+
+    @Override
+    public Optional<Publicacion> getById(String id_publicacion) {
+        return puplicacionesRepository.findById(id_publicacion);
+    }
+
+    
 
 }

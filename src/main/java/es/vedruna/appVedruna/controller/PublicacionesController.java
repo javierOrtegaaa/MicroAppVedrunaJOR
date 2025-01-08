@@ -4,6 +4,7 @@ package es.vedruna.appVedruna.controller;
 import es.vedruna.appVedruna.model.Publicacion;
 import es.vedruna.appVedruna.services.PublicacionServiceImpl;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,8 +13,7 @@ import java.util.List;
 @RequestMapping("/proyecto01/publicaciones")
 @AllArgsConstructor
 public class PublicacionesController {
-    
-    private PublicacionServiceImpl publicacionServiceImpl;
+    private final PublicacionServiceImpl publicacionServiceImpl;
 
     // Crear un nuevo usuario
     @PostMapping()
