@@ -5,3 +5,7 @@ spring:
     mongodb:
       uri: mongodb://localhost:27018/proyecto01
       
+springdoc:
+  api-docs:
+    enable: true
+    
