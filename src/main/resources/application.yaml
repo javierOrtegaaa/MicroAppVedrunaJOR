@@ -3,9 +3,11 @@ spring:
     name: micro01
   data:
     mongodb:
-      uri: mongodb://localhost:27018/proyecto01
+      uri: mongodb+srv://root:root@cluster0.aybhy.mongodb.net/proyecto01?retryWrites=true&w=majority&appName=Cluster0
       
 springdoc:
   api-docs:
     enable: true
     
+    
+##mongodb://localhost:27018/proyecto01
