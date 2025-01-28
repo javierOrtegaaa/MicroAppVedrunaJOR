@@ -20,6 +20,8 @@ public class Publicacion {
     private String id;
     private String user_id;
     private String image_url;
+    private String titulo;
+    private String comentario;
     private List <String> like = new LinkedList<>();
     private LocalDateTime createdAt = LocalDateTime.now();
 }

@@ -27,12 +27,5 @@ public class UsuarioController {
         return usuarioServiceImpl.getAllUsuarios();
     }
     
-    /* Buscar por nombre
-    @GetMapping("/name/{name}")
-    public List<Usuario> getUser(@PathVariable String name){
-        return  usuarioServiceImpl.getUser(name);
-    }
-    
-     */
 
 }
