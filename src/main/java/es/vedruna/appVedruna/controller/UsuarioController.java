@@ -18,6 +18,7 @@ public class UsuarioController {
     // Crear un nuevo usuario
     @PostMapping()
     public Usuario createUsuario(@RequestBody Usuario usuario) {
+        usuario.setProfile_picture("/src/images/perfil.png");
         return usuarioServiceImpl.createUsuario(usuario);
     }
 
